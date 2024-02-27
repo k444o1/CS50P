@@ -21,7 +21,7 @@ def is_valid(s):
             return False
     for character in s:
         if character.isdigit():
-            break #return stops execution of function
+            break #using return will stop the continued execution of function
     if character == "0":
         return False
     if s[s.index(character): ].isdigit(): #checking if all characters after non-zero number are digits
