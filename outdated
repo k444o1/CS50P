@@ -14,14 +14,14 @@ while True:
     "November",
     "December"]
         date = input("Date: ")
-        if "," in date:
+        if "," in date: #"September 8, 1636" format
             m, d, y = date.replace(",", "").split(" ")
             if m in list:
                 month = list.index(m) + 1
             if 1 <= int(d) <= 31:
                 print(f"{y}-{month:02}-{int(d):02}")
                 break
-        else:
+        else: #"9/8/1636" format
             m, d, y = date.split("/")
             if 1 <= int(d) <= 31 and 1<= int(m) <= 12:
                 print(f"{y}-{int(m):02}-{int(d):02}")
