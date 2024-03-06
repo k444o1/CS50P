@@ -28,5 +28,5 @@ while True:
                 break
     except ValueError: #if format of input is invalid
         pass
-    except NameError: #if month inputted is not in list
+    except NameError: #if month inputted is not in list, month becomes undefined
         pass
