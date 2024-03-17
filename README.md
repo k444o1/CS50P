@@ -33,5 +33,5 @@ Implement a program that
 Structure your program as follows, wherein get_level prompts (and, if need be, re-prompts) the user for a level(n) and returns 1, 2, or 3, and generate_integer returns a randomly generated non-negative integer with n digits or raises a ValueError if level is not 1, 2, or 3:
 
 9 to 5:
-Implement a function called convert that expects a str in either of the 12-hour formats("9:00 AM to 5:00 PM" or "9 AM to 5 PM) and returns the corresponding str in 24-hour format (i.e., 9:00 to 17:00). Expect that AM and PM will be capitalized and that there will be a space before each. 
+Implement a function called convert that expects a str in either of the 12-hour formats("9:00 AM to 5:00 PM" or "9 AM to 5 PM") and returns the corresponding str in 24-hour format (i.e., 9:00 to 17:00). Expect that AM and PM will be capitalized and that there will be a space before each. 
 Raise a ValueError instead if the input to convert is not in either of those formats or if either time is invalid (e.g., 12:60 AM, 13:00 PM, etc.). Do not assume that someone’s hours will start ante meridiem and end post meridiem(e.g., 5:00 PM to 9:00 AM).
