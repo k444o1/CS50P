@@ -15,7 +15,7 @@ def main():
             if guess == str(ans):
                 score += 1
                 break
-            elif guess != ans:
+            elif guess != str(ans):
                 print("EEE")
                 count += 1
         if count == 3:
