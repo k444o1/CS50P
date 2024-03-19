@@ -3,7 +3,7 @@ import re
 def main():
     try:
         print(convert(input("Hours: ")))
-    except ValueError:
+    except ValueError:#m is None/"cat AM to cat PM"/"9:60 AM to 5:00 PM" etc
         print("Invalid input")
 
 
