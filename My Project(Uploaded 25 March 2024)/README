@@ -1,1 +1,2 @@
-
+Uploaded on 25/3/2024. I created a class (Record) with methods to obtain highest or lowest-earning month, salary in a specified month, or mode working day in a specified month using a part-time job schedule record in a text file. 
+Format of 2024.csv: month(1 is January, 2 is February etc), day, from(24h clock, number of hours from 0), to(24h clock, 22.5 meaning 2230, 22.5 hours from 0), break(total number of hours of break). Values separated by commas
