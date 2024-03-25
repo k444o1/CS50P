@@ -1,0 +1,56 @@
+import re
+
+
+def main():
+    try:
+        print(convert(input("Hours: ")))
+    except ValueError:  # m is None/"cat AM to cat PM"/"9:60 AM to 5:00 PM" etc
+        print("Invalid input")
+
+
+def convert(s):
+    if m := re.search(r"(\w+):(..) (?:AM|PM) to (\w+):(..) (?:AM|PM)", s):  # "9:00 AM to 5:00 PM" format
+        if 1 <= int(m.group(1)) <= 12 and int(m.group(2).replace("0", "", 1)) < 60 and int(
+                m.group(2)) != 60 and 1 <= int(m.group(3)) <= 12 and int(m.group(4).replace("0", "", 1)) < 60 and int(
+                m.group(4)) != 60:  # checking input format
+            if m.group(1) == "12":  # e.g 12:00 AM is equivalent to 00:00
+                f = "0"
+            else:
+                f = m.group(1)
+            if m.group(3) == "12":
+                n = "0"
+            else:
+                n = m.group(3)
+            if m := re.search(r"(\w+):(..) AM to (\w+):(..) AM", s):
+                return f"{int(f):02}:{m.group(2)} to {int(n):02}:{m.group(4)}"
+            if m := re.search(r"(\w+):(..) AM to (\w+):(..) PM", s):
+                return f"{int(f):02}:{m.group(2)} to {int(n) + 12}:{m.group(4)}"
+            if m := re.search(r"(\w+):(..) PM to (\w+):(..) AM", s):
+                return f"{int(f) + 12}:{m.group(2)} to {int(n):02}:{m.group(4)}"
+            if m := re.search(r"(\w+):(..) PM to (\w+):(..) PM", s):
+                return f"{int(f) + 12}:{m.group(2)} to {int(n) + 12}:{m.group(4)}"
+
+    if m := re.search(r"(\w+) (?:AM|PM) to (\w+) (?:AM|PM)", s):  # "9 AM to 5 PM" format
+        if 1 <= int(m.group(1)) <= 12 and 1 <= int(m.group(2)) <= 12:
+            if m.group(1) == "12":
+                f = "0"
+            else:
+                f = m.group(1)
+            if m.group(2) == "12":
+                n = "0"
+            else:
+                n = m.group(2)
+            if m := re.search(r"(\w+) AM to (\w+) AM", s):
+                return (f"{int(f):02}:00 to {int(n):02}:00")
+            if m := re.search(r"(\w+) AM to (\w+) PM", s):
+                return f"{int(f):02}:00 to {int(n) + 12}:00"
+            if m := re.search(r"(\w+) PM to (\w+) AM", s):
+                return f"{int(f) + 12}:00 to {int(n):02}:00"
+            if m := re.search(r"(\w+) PM to (\w+) PM", s):
+                return f"{int(f) + 12}:00 to {int(n) + 12}:00"
+    else:
+        raise ValueError
+
+
+if __name__ == "__main__":
+    main()
