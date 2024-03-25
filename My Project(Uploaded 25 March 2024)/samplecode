@@ -1,1 +1,6 @@
-
+from code import Record
+record = Record(2024, "2024.csv") #Year, File name or path e.g. r"C:\Users\Olivia Ko\OneDrive\Pictures\Downloads\2024.csv"
+print(record.salary(2))
+print(record.salary(2, aftcpf=True))
+print(record.highest_month())
+print(record.mode_day(3))
