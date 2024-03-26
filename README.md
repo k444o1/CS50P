@@ -1,4 +1,4 @@
-My(Olivia) solutions for CS50P problem sets
+My(Olivia) solutions for CS50P problem sets + My project
 
 Coke Machine:
 Suppose that a machine sells bottles of Coca-Cola for 50 cents and only accepts coins in these denominations: 25 cents, 10 cents, and 5 cents.
