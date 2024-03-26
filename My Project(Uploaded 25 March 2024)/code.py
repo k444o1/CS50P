@@ -62,7 +62,7 @@ class Record:
             "October",
             "November",
             "December"]
-        for i in range(1, 4):
+        for i in range(1, 4): #data is only available for January to March
             list.append(float(Record.salary(self, i)))
         return f"{calendar[list.index(min(list))]}, Base: {min(list):.2f}"
 
